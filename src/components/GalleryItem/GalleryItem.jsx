@@ -1,22 +1,32 @@
-import { useState,useEffect } from "react";
-import GalleryList from "../GalleryList/GalleryList";
+// importing the use state tool
+import { useState} from "react";
+// importing the axios state tool
 import Axios from "axios";
+
+//A function to display the galleries
 function GalleryItem(props){
    
+    // assigning a variable to the props data
    let pics=props.pic
     
     console.log(pics);
+    // defining a isclicked function to use for the image
 const [isClicked,setIsClicked]=useState(true)
 
+// function to set clicked to false
 function touched(){
     setIsClicked(false)
     
 }
+
+// function to set click to true
 function unTouched(){
     setIsClicked(true)
     
 }
 
+// a variable called description that has a function that displays 
+// certain info depending on a conditional
   const description= ()=>{
    
     if(isClicked){
@@ -26,7 +36,7 @@ function unTouched(){
                 <img onClick={touched} className="pics" src={props.pic.path} alt="" /> 
                 
         <br></br>
-        <button className="button" onClick={increaseLove}>Love It</button> <br />
+        <span className="button" onClick={increaseLove}>❤️</span> <br />
         <span>{props.pic.likes} People love this!</span>
             </div>
             
@@ -44,9 +54,11 @@ function unTouched(){
    }
     
 }
-
+// setting count 
 const [count,setCount] = useState(0)
 
+// a function to increase the likes using a put request to update
+// the count of likes
 function increaseLove(){
     let id=props.pic.id
     console.log('love it');
@@ -68,10 +80,10 @@ function increaseLove(){
 return(
 
    <div>
-        
+
         {description()}
    </div>
   )
 }
-
+// exporting galleryitem
 export default GalleryItem;
