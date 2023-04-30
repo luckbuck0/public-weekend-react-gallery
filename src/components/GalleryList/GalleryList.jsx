@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 function GalleryList(){
-    console.log('hello');
+    
     const [count,setCount] = useState(0)
 function increaseLove(){
     console.log('love it');

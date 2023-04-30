@@ -1,20 +1,35 @@
+import GalleryList from "../GalleryList/GalleryList";
 
 function GalleryItem(props){
-    console.log('hi from gallery items');
-function desciption(props){
-    console.log('hello');
+   let pics=props.pics
+   console.log(props.path);
+    
+   function desciption(){
+    console.log('helloooooooo');
+    
     return (
-        <div>
-            
-        </div>
+        pics.map((pic)=>{
+            return (
+                <span key={pic.id} className="grid">
+                <div>{pic.description}</div>
+                <GalleryList />
+                </span>
+            )
+        })
     )
 }
-    return (
-        <div onClick={desciption}>
-            
-        </div>
-        
-    )
+return(
+
+    pics.map((pic)=>{
+        return (
+            <span key={pic.id} className="grid">
+            <img key={pic.id} className="pics" onClick={desciption} src={pic.path}  />
+            <GalleryList />
+            </span>
+        )
+    })
+    
+  )
 }
 
 export default GalleryItem;
