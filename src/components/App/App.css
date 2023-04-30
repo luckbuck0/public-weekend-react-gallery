@@ -13,5 +13,11 @@
   font-size: 1.5em;
 }
 
+.pics{
+  display: flex;
+  flex-direction: row;
+  width: 100px;
+  height: 100px;
+}
 
 

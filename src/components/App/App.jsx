@@ -2,32 +2,29 @@ import React, { useState,useEffect } from 'react';
 import './App.css';
 import GalleryList from '../GalleryList/GalleryList';
 import GalleryItem from '../GalleryItem/GalleryItem';
-import Axios from 'axios';
+import axios from 'axios';
 
 // import { response } from 'express';
 
 
 function App() {
 
-  const [pics,setPics]=useState([])
+//   const [pics,setPics]=useState([])
  
-  
-  useEffect(() => {
-    getGallery()
-  }, [])
 
- const getGallery = ()=>{
-    Axios({
-      method: 'GET',
-      url:'/gallery'
-    }).then((response)=>{
-      const list=response.data
-      console.log(response.data);
-      setPics(list)
-    }).catch((error)=>{
-      console.log('whoops didnt work', error);
-    })
-  }
+
+//  const getGallery = ()=>{
+//     axios.get({
+//       method: 'GET',
+//       url:'/gallery'
+//     }).then((response)=>{
+      
+//       console.log(response.data);
+//       setPics(response.data)
+//     }).catch((error)=>{
+//       console.log('whoops didnt work', error);
+//     })
+//   }
 
     return (
      
@@ -38,10 +35,10 @@ function App() {
         </header>
         <p>Gallery goes here</p>
         <div className='post'>
+       <GalleryList 
        
-        <GalleryItem 
-        pics={pics} 
-        />
+       />
+       
         
         </div>
         
