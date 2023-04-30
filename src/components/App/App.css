@@ -14,10 +14,22 @@
 }
 
 .pics{
-  display: flex;
-  flex-direction: row;
-  width: 100px;
-  height: 100px;
+  
+  width: 200px;
+  height: 200px;
+  margin-top: 20px;
 }
 
+.container{
+  display: flexbox;
+ 
+  float: left;
+  padding-left: 30px;
+  justify-content: center;
+}
 
+.button{
+  width: 60px;
+  height: 20px;
+  justify-content: center;
+}

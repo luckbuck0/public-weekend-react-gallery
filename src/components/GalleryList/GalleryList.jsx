@@ -29,21 +29,21 @@ function GalleryList(){
       
 
     
-    const [count,setCount] = useState(0)
 
-function increaseLove(){
-    console.log('love it');
-    setCount(count+1)
-}
+
     return (
         <div>
             
-        <button onClick={increaseLove}>Love It</button> <br />
-        <span>{count} People love this!</span>
+        
         {
           pics.map((pic) => {
             return (
-             <GalleryItem pic={pic}/>
+                <div className="container">
+                    <GalleryItem pic={pic}
+                    getGallery={getGallery}
+                    />    
+                </div>
+             
             )
           })
         }
